@@ -1,1 +1,4 @@
-el proyecto usara como control de verciones GIT.
+nombre : jonathan david
+apellido :duarte siabato
+edad : 21
+documento: 1193038770
