@@ -1,25 +1,25 @@
 package co.ucentral.gestionador.de.notas.controlador;
 
-import co.ucentral.gestionador.de.notas.servicios.ServicioEstudiante;
+import co.ucentral.gestionador.de.notas.servicios.ServicioDocente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class ControladorEstudiante {
+public class controladorDocente {
 
     @Autowired
-    ServicioEstudiante servEstudiante;
+    ServicioDocente servDocente;
 
     @GetMapping("/")
     public String inicio(){
-        return "redirect:/estudiantes/lista";
+        return "redirect:/docentes/lista";
     }
 
-    @GetMapping("/estudiantes/lista")
+    @GetMapping("/docentes/lista")
     public String mostrar(Model model){
-        model.addAttribute("estudiante",servEstudiante.listar());
-        return "estudiantes";
+        model.addAttribute("docente",servDocente.listar());
+        return "docentes";
     }
 }

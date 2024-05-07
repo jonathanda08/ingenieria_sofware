@@ -1,4 +1,4 @@
-package co.ucentral.gestionador.de.notas.serviciosEstudiante;
+package co.ucentral.gestionador.de.notas.servicios;
 
 import co.ucentral.gestionador.de.notas.dto.EstudiantesDto;
 import co.ucentral.gestionador.de.notas.entidades.Estudiante;
