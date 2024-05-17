@@ -2,29 +2,37 @@ package co.ucentral.gestionador.de.notas.repositorios;
 
 import co.ucentral.gestionador.de.notas.dto.DocenteDto;
 import co.ucentral.gestionador.de.notas.servicios.ServicioDocente;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.springframework.ui.Model;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
 class RepoDocentesTest {
 
-    @MockBean
+    @Mock
     private Model model;
 
-    @MockBean
+    @Mock
     private ServicioDocente servDocente;
+
+    @BeforeEach
+    public void setup() {
+        MockitoAnnotations.openMocks(this);
+    }
 
     @Test
     public void testListarDocentes() {
         List<DocenteDto> listaDocentes = Arrays.asList(new DocenteDto(), new DocenteDto());
-        Mockito.when(servDocente.listar()).thenReturn(listaDocentes);
+        when(servDocente.listar()).thenReturn(listaDocentes);
         model.addAttribute("listaDocentes", listaDocentes);
-        String result = "listaDocentes"; // Aquí debes llamar al método real que estás probando
+        String result = "listaDocentes";
         assertEquals("listaDocentes", result);
     }
 
@@ -32,7 +40,7 @@ class RepoDocentesTest {
     public void testCargarDocenteModal() {
         DocenteDto docenteLlenar = new DocenteDto();
         model.addAttribute("docenteLlenar", docenteLlenar);
-        String result = "crear"; // Aquí debes llamar al método real que estás probando
+        String result = "crear"; //
         assertEquals("crear", result);
     }
 
@@ -40,9 +48,9 @@ class RepoDocentesTest {
     public void testMostrarDocente() {
         Long id = 1L;
         DocenteDto docente = new DocenteDto();
-        Mockito.when(servDocente.findDtoById(id)).thenReturn(docente);
+        when(servDocente.findDtoById(id)).thenReturn(docente);
         model.addAttribute("docente", docente);
-        String result = "mostrarDocente"; // Aquí debes llamar al método real que estás probando
+        String result = "mostrarDocente";
         assertEquals("mostrarDocente", result);
     }
 }
