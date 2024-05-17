@@ -15,10 +15,15 @@ import java.io.Serializable;
 public class EstudiantesDto implements Serializable{
     private long id;
 
-    private long correo;
+    private String correoEstudiante;
 
-    private String nombre;
+    private String nombreEstudiante;
 
-    private String apellido;
+    private String apellidoEstudiante;
 
+    private double nota1;
+
+    private double nota2;
+
+    private double nota3;
 }

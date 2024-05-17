@@ -17,13 +17,21 @@ public class Estudiante {
     private long id;
 
     @Column(name = "EstCorreo")
-    private long correo;
+    private String correoEstudiante;
 
     @Column(name = "EstNOMBRE")
-    private String nombre;
+    private String nombreEstudiante;
 
     @Column(name = "EstAPELLIDO")
-    private String apellido;
+    private String apellidoEstudiante;
 
+    @Column(name = "Nota1")
+    private double nota1;
 
+    @Column(name = "Nota2")
+    private double nota2;
+
+    @Column(name = "Nota3")
+    private double nota3;
 }
+

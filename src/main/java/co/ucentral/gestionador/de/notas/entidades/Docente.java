@@ -17,13 +17,14 @@ public class Docente {
     private long id;
 
     @Column(name = "DocCorreo")
-    private long correo;
+    private String correo;
+
+    @Column(name = "DocAsignatura")
+    private String asignatura;
 
     @Column(name = "DocNOMBRE")
     private String nombre;
 
     @Column(name = "DocAPELLIDO")
     private String apellido;
-
-    // Puedes agregar más campos aquí según las necesidades de tu aplicación
 }

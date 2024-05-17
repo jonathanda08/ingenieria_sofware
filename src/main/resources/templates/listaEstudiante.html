@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Estudiantes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Lista de Estudiantes</h1>
+    <a href="http://localhost:8080/estudiantes/lista">Ver lista de estudiantes</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Correo</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+            <th>Nota 3</th>
+            <th>Promedio Final</th>
+        </tr>
+        </thead>
+        <tbody th:each="estudiante : ${estudiantes}">
+        <tr>
+            <td th:text="${estudiante.id}"></td>
+            <td th:text="${estudiante.correo}"></td>
+            <td th:text="${estudiante.nombre}"></td>
+            <td th:text="${estudiante.apellido}"></td>
+            <td th:text="${estudiante.nota1}"></td>
+            <td th:text="${estudiante.nota2}"></td>
+            <td th:text="${estudiante.nota3}"></td>
+            <td><a th:href="@{/estudiantes/{id}/promedio(id=${estudiante.id})}">Ver Promedio</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="http://localhost:8080/" class="btn btn-primary">Volver</a>
+</div>
+</body>
+</html>

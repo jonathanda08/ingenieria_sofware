@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Docente</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Crear Docente</h1>
+    <form action="/docentes/nuevo" method="post" th:object="${docenteLlenar}" >
+        <div class="form-group">
+            <label for="correo">Correo:</label>
+            <input th:field="*{correo}" type="email" class="form-control" id="correo" name="correo" required>
+        </div>
+        <div class="form-group">
+            <label for="asignatura">Asignatura:</label>
+            <input th:field= "*{asignatura}" type="text" class="form-control" id="asignatura" name="asignatura" required>
+        </div>
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input th:field= "*{nombre}" type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input th:field= "*{apellido}" type="text" class="form-control" id="apellido" name="apellido" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear</button>
+
+         </form>
+</div>
+</body>
+</html>

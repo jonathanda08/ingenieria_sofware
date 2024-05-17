@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Docentes</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1>Lista de Docentes</h1>
+  <a href="http://localhost:8080/docentes/lista"></a>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Correo</th>
+      <th>Asignatura</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+    </tr>
+    </thead>
+    <tbody th:each="docente : ${listaDocentes}">
+    <tr>
+      <td th:text="${docente.id}"></td>
+      <td th:text="${docente.correo}"></td>
+      <td th:text="${docente.asignatura}"></td>
+      <td th:text="${docente.nombre}"></td>
+      <td th:text="${docente.apellido}"></td>
+    </tr>
+    </tbody>
+  </table>
+  <a href="http://localhost:8080/#" class="btn btn-primary">Volver</a>
+</div>
+</body>
+</html>

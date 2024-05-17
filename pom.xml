@@ -36,7 +36,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		<dependency>
+		<dependency>.
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
@@ -59,7 +59,7 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<scope>annotationProcessor</scope>
 		</dependency>
-		<!-- Aquí está la nueva dependencia de ModelMapper -->
+		<!-- Aquí está la nueva dependencia de ModelMapperConfig -->
 		<dependency>
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>

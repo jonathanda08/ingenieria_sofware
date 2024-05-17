@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Estudiante</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Crear Estudiante</h1>
+    <form action="/estudiantes/nuevo" method="post">
+        <div class="form-group">
+            <label for="correoEstudiante">Correo:</label>
+            <input type="email" class="form-control" id="correoEstudiante" name="correoEstudiante" required>
+        </div>
+        <div class="form-group">
+            <label for="nombreEstudiante">Nombre:</label>
+            <input type="text" class="form-control" id="nombreEstudiante" name="nombreEstudiante" required>
+        </div>
+        <div class="form-group">
+            <label for="apellidoEstudiante">Apellido:</label>
+            <input type="text" class="form-control" id="apellidoEstudiante" name="apellidoEstudiante" required>
+        </div>
+        <div class="form-group">
+            <label for="nota1">Nota 1:</label>
+            <input type="number" step="0.01" class="form-control" id="nota1" name="nota1" required>
+        </div>
+        <div class="form-group">
+            <label for="nota2">Nota 2:</label>
+            <input type="number" step="0.01" class="form-control" id="nota2" name="nota2" required>
+        </div>
+        <div class="form-group">
+            <label for="nota3">Nota 3:</label>
+            <input type="number" step="0.01" class="form-control" id="nota3" name="nota3" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear</button>
+    </form>
+</div>
+</body>
+</html>
+
+
