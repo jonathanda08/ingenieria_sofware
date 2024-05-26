@@ -10,57 +10,42 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ServicioEstudiante implements OperacionesEstudiante {
 
-    @Autowired
-    RepoEstudiantes repoEstudiantes;
+    private final RepoEstudiantes repoEstudiantes;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    ModelMapper modelMapper;
-
-    @Autowired
-    public ServicioEstudiante(RepoEstudiantes repoEstudiantes) {
+    public ServicioEstudiante(RepoEstudiantes repoEstudiantes, ModelMapper modelMapper) {
         this.repoEstudiantes = repoEstudiantes;
+        this.modelMapper = modelMapper;
     }
 
     @Override
     public List<EstudiantesDto> listar() {
         TypeToken<List<EstudiantesDto>> typeToken = new TypeToken<>(){};
-        return modelMapper.map(repoEstudiantes.findAll(),typeToken.getType());
+        return modelMapper.map(repoEstudiantes.findAll(), typeToken.getType());
     }
 
     @Override
-    public void ingresar(EstudiantesDto estudiante) {
-        Estudiante estudiantes = modelMapper.map(estudiante,Estudiante.class);
-        repoEstudiantes.save(estudiantes);
+    public void ingresar(EstudiantesDto estudianteDto) {
+        Estudiante estudiante = modelMapper.map(estudianteDto, Estudiante.class);
+        repoEstudiantes.save(estudiante);
     }
 
     @Override
     public EstudiantesDto findDtoById(Long id) {
-        Optional<Estudiante> estudiante = repoEstudiantes.findById(id);
-        if (estudiante.isPresent()) {
-            return modelMapper.map(estudiante.get(), EstudiantesDto.class);
-        } else {
-            return null;
-        }
+        return repoEstudiantes.findById(id)
+                .map(estudiante -> modelMapper.map(estudiante, EstudiantesDto.class))
+                .orElse(EstudiantesDto.builder().build());
     }
 
-    public void ingresarNota(Long id, double nota1, double nota2, double nota3) {
-        Estudiante estudiante = repoEstudiantes.findById(id).orElseThrow(() -> new RuntimeException("Estudiante no encontrado"));
-        estudiante.setNota1(nota1);
-        estudiante.setNota2(nota2);
-        estudiante.setNota3(nota3);
-        repoEstudiantes.save(estudiante);
-    }
 
     public double calcularPromedio(Long id) {
-        Estudiante estudiante = repoEstudiantes.findById(id).orElseThrow(() -> new RuntimeException("Estudiante no encontrado"));
+        Estudiante estudiante = repoEstudiantes.findById(id)
+                .orElseThrow(() -> new RuntimeException("Estudiante no encontrado"));
         return estudiante.getNota1() * 0.3 + estudiante.getNota2() * 0.3 + estudiante.getNota3() * 0.4;
     }
-
 }
-
-

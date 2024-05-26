@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Crear Docente</title>
+    <title>Crear Corte</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         body {
@@ -36,23 +36,15 @@
 </head>
 <body>
 <div class="container">
-    <h1>Crear Docente</h1>
-    <form action="/docentes/nuevo" method="post" th:object="${docenteLlenar}">
+    <h1>Crear Corte</h1>
+    <form action="/corte" method="post" th:object="${corteLlenar}">
         <div class="form-group">
-            <label for="correo">Correo:</label>
-            <input th:field="*{correo}" type="email" class="form-control" id="correo" name="correo" required>
+            <label for="fechaInicio">Fecha de Inicio:</label>
+            <input th:field="*{fechaInicio}" type="date" class="form-control" id="fechaInicio" name="fechaInicio" required>
         </div>
         <div class="form-group">
-            <label for="asignatura">Asignatura:</label>
-            <input th:field="*{asignatura}" type="text" class="form-control" id="asignatura" name="asignatura" required>
-        </div>
-        <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input th:field="*{nombre}" type="text" class="form-control" id="nombre" name="nombre" required>
-        </div>
-        <div class="form-group">
-            <label for="apellido">Apellido:</label>
-            <input th:field="*{apellido}" type="text" class="form-control" id="apellido" name="apellido" required>
+            <label for="fechaFinalizacion">Fecha de Finalización:</label>
+            <input th:field="*{fechaFinalizacion}" type="date" class="form-control" id="fechaFinalizacion" name="fechaFinalizacion" required>
         </div>
         <button type="submit" class="btn btn-primary">Crear</button>
     </form>

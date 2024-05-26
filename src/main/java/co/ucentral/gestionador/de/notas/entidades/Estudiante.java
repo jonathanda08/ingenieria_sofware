@@ -8,30 +8,30 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity(name = "Estudiantes")
-@Table(name = "ESTUDIANTES")
+@Entity(name = "Estudiante")
+@Table(name = "ESTUDIANTE")
 public class Estudiante {
     @Id
-    @Column(name = "EstID")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,  generator = "SEQ_ESTUDIANTES")
+    @Column(name = "EST_ID")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ESTUDIANTES")
     private long id;
 
-    @Column(name = "EstCorreo")
-    private String correoEstudiante;
+    @Column(name = "EST_CORREO")
+    private String correo;
 
-    @Column(name = "EstNOMBRE")
-    private String nombreEstudiante;
+    @Column(name = "EST_NOMBRE")
+    private String nombre;
 
-    @Column(name = "EstAPELLIDO")
-    private String apellidoEstudiante;
+    @Column(name = "EST_APELLIDO")
+    private String apellido;
 
-    @Column(name = "Nota1")
+    @Column(name = "NOTA1")
     private double nota1;
 
-    @Column(name = "Nota2")
+    @Column(name = "NOTA2")
     private double nota2;
 
-    @Column(name = "Nota3")
+    @Column(name = "NOTA3")
     private double nota3;
 }
 

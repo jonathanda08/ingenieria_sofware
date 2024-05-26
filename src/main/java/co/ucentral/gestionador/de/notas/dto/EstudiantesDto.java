@@ -1,6 +1,5 @@
 package co.ucentral.gestionador.de.notas.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,11 +14,11 @@ import java.io.Serializable;
 public class EstudiantesDto implements Serializable{
     private long id;
 
-    private String correoEstudiante;
+    private String correo;
 
-    private String nombreEstudiante;
+    private String nombre;
 
-    private String apellidoEstudiante;
+    private String apellido;
 
     private double nota1;
 

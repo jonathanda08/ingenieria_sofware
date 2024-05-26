@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Estudiante</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .form-group label {
+            color: #555;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Crear Estudiante</h1>
+    <form th:action="@{/estudiante/nuevo}" method="post" th:object="${estudianteLlenar}">
+        <div class="form-group">
+            <label for="correoEstudiante">Correo:</label>
+            <input type="email" class="form-control" id="correoEstudiante" name="correoEstudiante" th:field="*{correo}" required>
+        </div>
+        <div class="form-group">
+            <label for="nombreEstudiante">Nombre:</label>
+            <input type="text" class="form-control" id="nombreEstudiante" name="nombreEstudiante" th:field="*{nombre}" required>
+        </div>
+        <div class="form-group">
+            <label for="apellidoEstudiante">Apellido:</label>
+            <input type="text" class="form-control" id="apellidoEstudiante" name="apellidoEstudiante" th:field="*{apellido}" required>
+        </div>
+        <div class="form-group">
+            <label for="nota1">Nota 1:</label>
+            <input type="number" step="0.01" class="form-control" id="nota1" name="nota1" th:field="*{nota1}" required>
+        </div>
+        <div class="form-group">
+            <label for="nota2">Nota 2:</label>
+            <input type="number" step="0.01" class="form-control" id="nota2" name="nota2" th:field="*{nota2}" required>
+        </div>
+        <div class="form-group">
+            <label for="nota3">Nota 3:</label>
+            <input type="number" step="0.01" class="form-control" id="nota3" name="nota3" th:field="*{nota3}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear</button>
+    </form>
+</div>
+</body>
+</html>
+

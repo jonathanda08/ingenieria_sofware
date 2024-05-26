@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Cortes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f6f7;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .table thead {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+        .table tbody tr:nth-child(even) {
+            background-color: #ecf0f1;
+        }
+        .table tbody tr:hover {
+            background-color: #bdc3c7;
+        }
+        .btn-primary {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+        .btn-primary:hover {
+            background-color: #1abc9c;
+            border-color: #1abc9c;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Lista de Cortes</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fecha de Inicio</th>
+            <th>Fecha de Finalización</th>
+        </tr>
+        </thead>
+        <tbody th:each="corte : ${listaCortes}">
+        <tr>
+            <td th:text="${corte.id}"></td>
+            <td th:text="${corte.fechaInicio}"></td>
+            <td th:text="${corte.fechaFinalizacion}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="http://localhost:8080/#" class="btn btn-primary">Volver</a>
+</div>
+</body>
+</html>
