@@ -1,9 +1,7 @@
 package co.ucentral.gestionador.de.notas.servicios;
 
 import co.ucentral.gestionador.de.notas.dto.ActividadDto;
-import co.ucentral.gestionador.de.notas.dto.DocenteDto;
 import co.ucentral.gestionador.de.notas.entidades.Actividad;
-import co.ucentral.gestionador.de.notas.entidades.Docente;
 import co.ucentral.gestionador.de.notas.operaciones.OperacionesActividad;
 import co.ucentral.gestionador.de.notas.repositorios.RepoActividad;
 import org.modelmapper.ModelMapper;

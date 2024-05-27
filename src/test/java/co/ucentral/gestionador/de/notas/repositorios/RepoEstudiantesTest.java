@@ -28,7 +28,7 @@ class RepoEstudiantesTest {
     }
 
     @Test
-    public void testListarEstudiantes() {
+    void testListarEstudiantes() {
         List<EstudiantesDto> listaEstudiantes = Arrays.asList(new EstudiantesDto(), new EstudiantesDto());
         when(servEstudiante.listar()).thenReturn(listaEstudiantes);
         model.addAttribute("listaEstudiantes", listaEstudiantes);
@@ -37,7 +37,7 @@ class RepoEstudiantesTest {
     }
 
     @Test
-    public void testCargarEstudianteModal() {
+    void testCargarEstudianteModal() {
         EstudiantesDto estudianteLlenar = new EstudiantesDto();
         model.addAttribute("estudianteLlenar", estudianteLlenar);
         String result = "/estudiantes/nuevo";
@@ -45,7 +45,7 @@ class RepoEstudiantesTest {
     }
 
     @Test
-    public void testMostrarEstudiante() {
+    void testMostrarEstudiante() {
         Long id = 1L;
         EstudiantesDto estudiante = new EstudiantesDto();
         when(servEstudiante.findDtoById(id)).thenReturn(estudiante);

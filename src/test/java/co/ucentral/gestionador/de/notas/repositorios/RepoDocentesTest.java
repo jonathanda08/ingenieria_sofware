@@ -28,7 +28,7 @@ class RepoDocentesTest {
     }
 
     @Test
-    public void testListarDocentes() {
+    void testListarDocentes() {
         List<DocenteDto> listaDocentes = Arrays.asList(new DocenteDto(), new DocenteDto());
         when(servDocente.listar()).thenReturn(listaDocentes);
         model.addAttribute("listaDocentes", listaDocentes);
@@ -37,7 +37,7 @@ class RepoDocentesTest {
     }
 
     @Test
-    public void testCargarDocenteModal() {
+    void testCargarDocenteModal() {
         DocenteDto docenteLlenar = new DocenteDto();
         model.addAttribute("docenteLlenar", docenteLlenar);
         String result = "crear"; //
@@ -45,7 +45,7 @@ class RepoDocentesTest {
     }
 
     @Test
-    public void testMostrarDocente() {
+    void testMostrarDocente() {
         Long id = 1L;
         DocenteDto docente = new DocenteDto();
         when(servDocente.findDtoById(id)).thenReturn(docente);
