@@ -1,4 +1,4 @@
-package co.ucentrel.gestionador.de.notas;
+package co.ucentral.gestionador.de.notas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

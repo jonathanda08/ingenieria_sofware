@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title> Crear Actividad </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Crear Actividad</h1>
+    <form action="/Actividad/nuevo" method="post" th:object="${actividadLlenar}">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input th:field="*{nombre}" type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="porcentajeNota">Porcentaje de Nota:</label>
+            <input th:field="*{porcentajeNota}" type="number" class="form-control" id="porcentajeNota" name="porcentajeNota" min="0" max="100" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <textarea th:field="*{descripcion}" id="descripcion" name="descripcion" rows="3" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Crear</button>
+    </form>
+</div>
+</body>
+</html>
